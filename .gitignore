@@ -1,0 +1,30 @@
+# Sensitive data
+.ssh/
+.gnupg/
+.env
+.env.local
+*.key
+*.pem
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor backups
+*.swp
+*.swo
+*~
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Temporary
+*.tmp
+*.bak
+*.log
+
+# Shell history
+.bash_history
+.zsh_history
+.history
