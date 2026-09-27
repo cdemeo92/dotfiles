@@ -47,3 +47,4 @@ dotfiles/
 - [jq](003-jq/README.md)
 - [ripgrep](004-ripgrep/README.md)
 - [vim](005-vim/README.md)
+- [zsh](999-zsh/README.md)
