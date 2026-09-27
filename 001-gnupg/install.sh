@@ -23,4 +23,9 @@ else
     cp "$config_source" "$config_target"
 fi
 
-echo "GnuPG installed."
+if command -v gpg >/dev/null 2>&1; then
+	echo "GnuPG installation completed."
+else
+	echo "GnuPG installation failed: gpg is not available in PATH." >&2
+	exit 1
+fi
