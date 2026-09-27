@@ -40,4 +40,4 @@ dotfiles/
 
 ## Available tools
 
-- [TBD](000-TBD/README.md)
+- [brew](000-brew/README.md)
