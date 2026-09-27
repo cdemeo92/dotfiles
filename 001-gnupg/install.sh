@@ -23,6 +23,15 @@ else
     cp "$config_source" "$config_target"
 fi
 
+zshrc_target="$HOME/.zshrc"
+gpg_tty_setting='export GPG_TTY="$(tty)"'
+if ! grep -Fqx -- "$gpg_tty_setting" "$zshrc_target" 2>/dev/null; then
+    if [[ -s "$zshrc_target" ]]; then
+        printf '\n' >> "$zshrc_target"
+    fi
+    cat "$script_dir/config/.zshrc" >> "$zshrc_target"
+fi
+
 if command -v gpg >/dev/null 2>&1; then
 	echo "GnuPG installation completed."
     echo "Run gpg --full-generate-key to create a new GnuPG key."
