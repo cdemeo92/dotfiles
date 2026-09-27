@@ -7,5 +7,5 @@ Installs Vim.
 Run from the repository root:
 
 ```bash
-bash 003-vim/install.sh
+bash 005-vim/install.sh
 ```

@@ -38,3 +38,11 @@ Plug 'elixir-editors/vim-elixir'   " Elixir syntax highlighting
 Plug 'wellle/context.vim'          " Display context (object, method)
 
 call plug#end()
+
+"" ─────────────────────────────────────────────────────────────────────────────
+"" fzf
+"" ─────────────────────────────────────────────────────────────────────────────
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fo :History<CR>
+nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>fg :Rg<Space>

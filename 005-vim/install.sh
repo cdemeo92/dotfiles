@@ -23,4 +23,13 @@ else
     cp "$script_dir/config/.vimrc" "$vimrc_target"
 fi
 
+plug_file="$HOME/.vim/autoload/plug.vim"
+if [[ ! -f "$plug_file" ]]; then
+    echo "Installing vim-plug..."
+    curl -fLo "$plug_file" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+
+echo "Installing Vim plugins..."
+vim -Nu "$script_dir/config/.vimrc" -n -es -c 'PlugInstall --sync' -c 'qa!'
+
 echo "Vim installation completed."

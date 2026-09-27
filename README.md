@@ -44,4 +44,6 @@ dotfiles/
 - [brew](000-brew/README.md)
 - [gnupg](001-gnupg/README.md)
 - [git](002-git/README.md)
-- [vim](003-vim/README.md)
+- [jq](003-jq/README.md)
+- [ripgrep](004-ripgrep/README.md)
+- [vim](005-vim/README.md)
