@@ -25,6 +25,8 @@ fi
 
 if command -v gpg >/dev/null 2>&1; then
 	echo "GnuPG installation completed."
+    echo "Run gpg --full-generate-key to create a new GnuPG key."
+    read -r -p "Press Enter to proceed..."
 else
 	echo "GnuPG installation failed: gpg is not available in PATH." >&2
 	exit 1
