@@ -34,6 +34,7 @@ The root `install.sh` discovers the tool folders and executes their `install.sh`
 ```text
 dotfiles/
 ├── NNN-[tool-name]/
+│   ├── config/ (optional)
 │   └── install.sh
 └── install.sh
 ```
@@ -41,3 +42,5 @@ dotfiles/
 ## Available tools
 
 - [brew](000-brew/README.md)
+- [gnupg](001-gnupg/README.md)
+- [git](002-git/README.md)
