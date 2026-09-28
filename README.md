@@ -23,8 +23,17 @@ To run only selected tools, pass their names:
 ./install.sh <tool> [tool ...]
 ```
 
-When tool names are provided, they run in the given order. Without arguments,
-the installer runs every tool in this repo in numeric-prefix order.
+To install everything except selected tools, put `-` before their names:
+
+```bash
+./install.sh - <tool> [tool ...]
+```
+
+Excluded names that do not match a tool are ignored.
+
+Without arguments, the
+installer runs every tool in numeric-prefix order; when selecting tools by
+name, it runs them in the order provided.
 
 ## Project structure
 

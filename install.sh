@@ -9,36 +9,50 @@ to_install=()
 
 tools=("${directories[@]#*-}")
 
-for tool in "$@"; do
-    found=false
+if [[ $# -eq 0 ]]; then
+    to_install=("${directories[@]}")
+elif [[ "$1" == "-" ]]; then
+    shift
     for i in "${!tools[@]}"; do
-        if [[ "${tools[i]}" == "$tool" ]]; then
-            to_install+=("${directories[i]}")
-            found=true
-            break
-        fi
-    done
-
-    if [[ "$found" == false ]]; then
-        echo "Tool $tool not found in available tools."
-
-        suggestion=""
-        for name in "${tools[@]}"; do
-            if [[ "$name" == "${tool:0:2}"* ]]; then
-                suggestion=$name
+        excluded=false
+        for tool in "$@"; do
+            if [[ "${tools[i]}" == "$tool" ]]; then
+                excluded=true
                 break
             fi
         done
-        if [[ -n "$suggestion" ]]; then
-            echo "Did you mean $suggestion?"
+        if [[ "$excluded" == false ]]; then
+            to_install+=("${directories[i]}")
         fi
+    done
+else
+    for tool in "$@"; do
+        found=false
+        for i in "${!tools[@]}"; do
+            if [[ "${tools[i]}" == "$tool" ]]; then
+                to_install+=("${directories[i]}")
+                found=true
+                break
+            fi
+        done
 
-        exit 1
-    fi
-done
+        if [[ "$found" == false ]]; then
+            echo "Tool $tool not found in available tools."
 
-if [[ ${#to_install[@]} -eq 0 ]]; then
-    to_install=("${directories[@]}")
+            suggestion=""
+            for name in "${tools[@]}"; do
+                if [[ "$name" == "${tool:0:2}"* ]]; then
+                    suggestion=$name
+                    break
+                fi
+            done
+            if [[ -n "$suggestion" ]]; then
+                echo "Did you mean $suggestion?"
+            fi
+
+            exit 1
+        fi
+    done
 fi
 
 failed_tools=()
