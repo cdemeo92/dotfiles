@@ -10,7 +10,7 @@ if ! command -v git >/dev/null 2>&1; then
 	fi
 
 	echo "Installing Git..."
-	brew install -q git
+	brew install -q --no-ask git
 fi
 
 if ! command -v git >/dev/null 2>&1; then

@@ -7,7 +7,7 @@ if ! command -v brew >/dev/null 2>&1; then
 fi
 
 echo "Installing ripgrep..."
-brew install -q ripgrep
+brew install -q --no-ask ripgrep
 
 if ! command -v rg >/dev/null 2>&1; then
     echo "ripgrep installation failed: rg is not available in PATH." >&2

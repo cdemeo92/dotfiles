@@ -9,7 +9,7 @@ if ! command -v brew >/dev/null 2>&1; then
 fi
 
 echo "Installing Vim..."
-brew install -q vim
+brew install -q --no-ask vim
 
 if ! command -v vim >/dev/null 2>&1; then
     echo "Vim installation failed: vim is not available in PATH." >&2

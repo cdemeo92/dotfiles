@@ -7,7 +7,7 @@ if ! command -v brew >/dev/null 2>&1; then
 fi
 
 echo "Installing jq..."
-brew install -q jq
+brew install -q --no-ask jq
 
 if ! command -v jq >/dev/null 2>&1; then
     echo "jq installation failed: jq is not available in PATH." >&2

@@ -8,7 +8,7 @@ if ! command -v brew >/dev/null 2>&1; then
 fi
 
 echo "Installing GnuPG and pinentry-mac..."
-brew install -q gnupg pinentry-mac
+brew install -q --no-ask gnupg pinentry-mac
 
 gnupg_dir="$HOME/.gnupg"
 config_source="$script_dir/config/gpg-agent.conf"

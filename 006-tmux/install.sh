@@ -10,7 +10,7 @@ if ! command -v tmux >/dev/null 2>&1; then
     fi
 
     echo "Installing tmux..."
-    brew install -q tmux
+    brew install -q --no-ask tmux
 fi
 
 if ! command -v tmux >/dev/null 2>&1; then
