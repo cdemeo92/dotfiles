@@ -62,4 +62,6 @@ dotfiles/
 - [bat](009-bat/README.md)
 - [eza](010-eza/README.md)
 - [zoxide](011-zoxide/README.md)
+- [nvm](012-nvm/README.md)
+- [asdf](013-asdf/README.md)
 - [zsh](999-zsh/README.md)
